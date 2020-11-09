@@ -66,7 +66,11 @@ class Application(tk.Frame):
         
         
     def set_time(self,time):
-        self.after(time*1000, lambda: self.allbut.invoke())
+        self.after(time*1000, lambda: self.looper(time))
+
+    def looper(self, time):
+        self.allbut.invoke()
+        self.after(time*1000, lambda: self.set_time(time))
 
 
     

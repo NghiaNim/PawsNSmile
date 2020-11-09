@@ -36,13 +36,16 @@ class Application(tk.Frame):
         
         #Creates a Tkinter-compatible photo image, which can be used everywhere Tkinter expects an image object.
         img_temp = ImageTk.PhotoImage(Image.open(self.path + str(img)).resize((300,300)))
-        print(img_temp)
-        #The Label widget is a standard Tkinter widget used to display a text or image on the screen.
-        panel = tk.Label(t, image = img_temp)
-        panel.image = img_temp
-        panel.place(x=0, y=0)
+        # print(img_temp)
+        # #The Label widget is a standard Tkinter widget used to display a text or image on the screen.
+        # panel = tk.Label(t, image = img_temp)
+        # panel.image = img_temp
+        # panel.place(x=0, y=0)
 
-        t.after(3000, lambda: t.destroy())
+        # t.after(3000, lambda: t.destroy())
+        label = tk.Label(image=img_temp)
+        label.image = img_temp # keep a reference!
+        label.pack()
 
 
     def dog_gen(self):

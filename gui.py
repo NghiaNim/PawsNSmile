@@ -43,16 +43,16 @@ class Application(tk.Frame):
         # panel.place(x=0, y=0)
 
         # t.after(3000, lambda: t.destroy())
-        label = tk.Label(image=img_temp)
+        label = tk.Label(t,image=img_temp)
         label.image = img_temp # keep a reference!
         label.pack()
+
 
 
     def dog_gen(self):
         os.system('python dog.py')
         for dog in os.listdir(self.path + '/dogs'):
             self.create_window('/dogs/' + dog)
-            time.sleep(1)
 
 
 
@@ -60,7 +60,6 @@ class Application(tk.Frame):
         os.system('python cat.py')
         for cat in os.listdir(self.path + '/cats'):
             self.create_window('/cats/' + cat)
-            time.sleep(1)
 
 
 

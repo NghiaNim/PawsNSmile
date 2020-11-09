@@ -1,3 +1,2 @@
-#get your own API key on https://www.flickr.com/services/api/ and clicking on the API keys url
-api_key = u'XXXXXXXXXXXXXXXXXXXXXXXX'
-api_secret = u'XXXXXXXXXXXXXX'
+api_key = u'35244d219af574d04bb14f1f3af8b3b9'
+api_secret = u'0520411f29f250cc'

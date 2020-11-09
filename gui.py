@@ -30,33 +30,33 @@ class Application(tk.Frame):
     
     def create_window(self, img):
         print(img)
-        # t = tk.Toplevel(self)
-        # t.wm_title("Happiness here")
-        # print(self.path +'/'+ str(img))
+        t = tk.Toplevel(self)
+        t.wm_title("Happiness here")
+        print(self.path +'/'+ str(img))
         
-        # #Creates a Tkinter-compatible photo image, which can be used everywhere Tkinter expects an image object.
-        # img_temp = ImageTk.PhotoImage(Image.open(self.path + str(img)).resize((300,300)))
-        # print(img_temp)
-        # #The Label widget is a standard Tkinter widget used to display a text or image on the screen.
-        # panel = tk.Label(t, image = img_temp)
-        # panel.image = img_temp
-        # panel.place(x=0, y=0)
+        #Creates a Tkinter-compatible photo image, which can be used everywhere Tkinter expects an image object.
+        img_temp = ImageTk.PhotoImage(Image.open(self.path + str(img)).resize((300,300)))
+        print(img_temp)
+        #The Label widget is a standard Tkinter widget used to display a text or image on the screen.
+        panel = tk.Label(t, image = img_temp)
+        panel.image = img_temp
+        panel.place(x=0, y=0)
 
-        # t.after(3000, lambda: t.destroy())
+        t.after(3000, lambda: t.destroy())
 
 
     def dog_gen(self):
         os.system('python dog.py')
-        for dog in os.listdir(self.path + '/dog'):
-            self.create_window(dog)
+        for dog in os.listdir(self.path + '/dogs'):
+            self.create_window('/dogs/' + dog)
             time.sleep(1)
 
 
 
     def cat_gen(self):
         os.system('python cat.py')
-        for cat in os.listdir(self.path + '/cat'):
-            self.create_window('/cat/' + cat)
+        for cat in os.listdir(self.path + '/cats'):
+            self.create_window('/cats/' + cat)
             time.sleep(1)
 
 

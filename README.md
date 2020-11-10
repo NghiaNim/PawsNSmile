@@ -5,12 +5,12 @@ I can't fix any of those problems but here's some cute cats and dogs.
 
 ## Installation
 
-Install Pillow and Flickrapi before running PawsNSmile
+Install Pillow and Flickrapi before running PawsNSmile using the package manager [pip](https://pip.pypa.io/en/stable/).
 
-'''bash
+''' bash
 pip install pillow
 pip install flickrapi
-'''bash
+''' bash
 
 ## Usage
 Step 1: Run the [gui.py](gui.py) file and a functional window will pop up.
@@ -26,5 +26,5 @@ Step 5: Enjoy your cats and dogs while Zoom university destroy your soul.
 ## Customize your cats and dogs
 Are the regular cats and dogs too tame for you?
 
-Head into the [cat.py](cat.py) or [dog.py](dog.py) file to change it up. Use other keywords, other sorts, or other tags to spice up your gallerty
+Head into the [cat.py](cat.py) or [dog.py](dog.py) file to change it up. Use other keywords, other sorts, or other tags to spice up your gallery.
 

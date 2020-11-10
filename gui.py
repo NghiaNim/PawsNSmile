@@ -26,33 +26,33 @@ class Application(tk.Frame):
 
 
     def create_widgets(self):
-        self.cat = tk.Button(self,bg ="#20bebe")
+        self.cat = tk.Button(self,bg ="#20bebe",pady = 10)
         self.cat['text'] = 'Generate cats'
         self.cat['command'] = self.cat_gen
         self.cat.pack(fill = 'x',side = 'left')
 
-        self.dog = tk.Button(self,bg ="#20bebe")
+        self.dog = tk.Button(self,bg ="#20bebe",pady = 10,bd=2)
         self.dog['text'] = 'Generate dogs'
         self.dog['command'] = self.dog_gen
         self.dog.pack(fill = 'x',side = 'left')
 
-        self.dog_pics = tk.Button(self, text = 'sample dog', command = lambda: self.create_window(self.dog_list[-1]),bg ="#20bebe")
+        self.dog_pics = tk.Button(self, text = 'sample dog', command = lambda: self.create_window(self.dog_list[-1]),bg ="#20bebe",pady = 10)
 
         self.dog_pics.pack(fill = 'x',side = 'right')
 
-        self.cat_pics = tk.Button(self, text = 'sample cat', command = lambda: self.create_window(self.cat_list[-1]),bg ="#20bebe")
+        self.cat_pics = tk.Button(self, text = 'sample cat', command = lambda: self.create_window(self.cat_list[-1]),bg ="#20bebe",pady = 10)
 
         self.cat_pics.pack(fill = 'x',side = 'right')
 
-        self.allbut = tk.Button(self, text = 'random cat/dog', command = lambda: self.create_window(self.all[-1]),bg ="#20bebe")
+        self.allbut = tk.Button(self, text = 'random cat/dog', command = lambda: self.create_window(self.all[-1]),bg ="#20bebe",pady = 10)
 
         self.allbut.pack(fill = 'x',side = 'right')
 
-        self.timer = tk.Button(self, text = 'Set timer', command = self.timing,bg ="#20bebe")
+        self.timer = tk.Button(self, text = 'Set timer', command = self.timing,bg ="#20bebe",pady = 1)
 
         self.timer.pack(fill ='x', side = 'bottom')
 
-        self.quit = tk.Button(self, text="QUIT", fg="red",bg ="#20bebe",
+        self.quit = tk.Button(self, text="QUIT", fg="red",bg ="#20bebe",pady = 1,
                               command=self.master.destroy)
         self.quit.pack(side="bottom")
         

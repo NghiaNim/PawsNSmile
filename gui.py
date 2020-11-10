@@ -72,9 +72,9 @@ class Application(tk.Frame):
         self.butt5.pack(fill = 'x',side = 'right')     
 
     def printtext(self):
-        e = tk.Entry(self.t, width=15)
+        e = tk.Entry(self.t, width=20)
         e.pack()
-        e.insert(0, "5")
+        e.insert(0, "Enter Time in minutes")
         e.focus_set()
         b5 = tk.Button(self.t, text = "Okay", command=lambda: self.destroy_button(e), bg="#20bebe")
         b5.pack(side="bottom")

@@ -15,6 +15,7 @@ class Application(tk.Frame):
         self.dog_list = []
         self.cat_list = []
         self.all = []
+        self.loop = False
 
     # # creating the logo
     # def create_logo(self):
@@ -52,44 +53,58 @@ class Application(tk.Frame):
 
         self.timer.pack(fill ='x', side = 'bottom')
 
+        self.stopbut = tk.Button(self, text = 'Stop', command = self.stop_loop,bg ="#20bebe",pady = 10)
+
+        self.stopbut.pack(fill = 'x',side = 'left')
+
         self.quit = tk.Button(self, text="QUIT", fg="red",bg ="#20bebe",pady = 1,
                               command=self.master.destroy)
         self.quit.pack(side="bottom")
+
+
         
+    def stop_loop(self):
+        self.loop = False
 
     def timing(self):
 
         self.t = tk.Toplevel(self)
-        self.butt1 =tk.Button(self.t, text = '5 minutes', command = lambda: self.set_time(300),bg ="#20bebe")
+        self.butt1 =tk.Button(self.t, text = '5 minutes', command = lambda: self.interval(300),bg ="#20bebe")
         self.butt1.pack(fill = 'x',side = 'right')
-        self.butt2 =tk.Button(self.t, text = '10 minutes', command = lambda: self.set_time(600),bg ="#20bebe")
+        self.butt2 =tk.Button(self.t, text = '10 minutes', command = lambda: self.interval(600),bg ="#20bebe")
         self.butt2.pack(fill = 'x',side = 'right')
-        self.butt3 =tk.Button(self.t, text = '15 minutes', command = lambda: self.set_time(900),bg ="#20bebe")
+        self.butt3 =tk.Button(self.t, text = '15 minutes', command = lambda: self.interval(900),bg ="#20bebe")
         self.butt3.pack(fill = 'x',side = 'right')
-        self.butt4 =tk.Button(self.t, text = '20 minutes', command = lambda: self.set_time(1200),bg ="#20bebe")
+        self.butt4 =tk.Button(self.t, text = '20 minutes', command = lambda: self.interval(1200),bg ="#20bebe")
         self.butt4.pack(fill = 'x',side = 'right')
         self.butt5 =tk.Button(self.t, text = 'custom', command = lambda: self.printtext(),bg ="#20bebe")
         self.butt5.pack(fill = 'x',side = 'right')     
 
+    def interval(self, time):
+        self.loop = True
+        self.set_time(time)
+
     def printtext(self):
         e = tk.Entry(self.t, width=20)
         e.pack()
-        e.insert(0, "Enter Time in minutes")
+        e.insert(0, "Enter Time in seconds")
         e.focus_set()
         b5 = tk.Button(self.t, text = "Okay", command=lambda: self.destroy_button(e), bg="#20bebe")
         b5.pack(side="bottom")
         
     def destroy_button(self,e):
-        self.set_time(int(e.get()))
+        self.interval(int(e.get()))
         self.t.destroy()
         
     def set_time(self,time):
-        self.after(time*1000, lambda: self.looper(time))
-        self.t.destroy()
+        if self.loop:
+            self.after(time*1000, lambda: self.looper(time))
+            self.t.destroy()
 
     def looper(self, time):
-        self.allbut.invoke()
-        self.after(time*1000, lambda: self.set_time(time))
+        if self.loop:
+            self.allbut.invoke()
+            self.after(time*1000, lambda: self.set_time(time))
 
 
     

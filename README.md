@@ -7,10 +7,10 @@ I can't fix any of those problems but here's some cute cats and dogs.
 
 Install Pillow and Flickrapi before running PawsNSmile using the package manager [pip](https://pip.pypa.io/en/stable/).
 
-''' bash
+'''bash
 pip install pillow
 pip install flickrapi
-''' bash
+'''
 
 ## Usage
 Step 1: Run the [gui.py](gui.py) file and a functional window will pop up.

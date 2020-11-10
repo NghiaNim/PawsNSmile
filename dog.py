@@ -6,7 +6,7 @@ import key
 path = os.getcwd()
 # Flickr api access key 
 
-flickr=flickrapi.FlickrAPI(api_key, api_secret, cache=True)
+flickr=flickrapi.FlickrAPI(key.api_key, key.api_secret, cache=True)
 
 
 keyword = 'cute dogs'

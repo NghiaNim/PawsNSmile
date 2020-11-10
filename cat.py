@@ -5,9 +5,8 @@ import key
 
 path = os.getcwd()
 # Flickr api access key 
-api_key = u'35244d219af574d04bb14f1f3af8b3b9'
-api_secret = u'0520411f29f250cc'
-flickr=flickrapi.FlickrAPI(api_key, api_secret, cache=True)
+
+flickr=flickrapi.FlickrAPI(key.api_key, key.api_secret, cache=True)
 
 
 keyword = 'cute cats'
@@ -21,8 +20,6 @@ photos = flickr.walk(text=keyword,
 
 urls = []
 for i, photo in enumerate(photos):
-    print (i)
-    
     url = photo.get('url_c')
     urls.append(url)
     

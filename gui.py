@@ -11,40 +11,48 @@ class Application(tk.Frame):
         self.master = master
         self.pack()
         self.create_widgets()
+        self.create_logo()
         self.dog_list = []
         self.cat_list = []
         self.all = []
 
+    # creating the logo
+    def create_logo(self):
+        global img, NW
+        self.img = ImageTk.PhotoImage(Image.open("catNdog.jpg"))
+        # convert pillow image to tkinter image
+        # self.create_logo(20, 20, anchor=NW, image=self.img)
+        # self.image = self.img
 
 
     def create_widgets(self):
-        self.cat = tk.Button(self)
+        self.cat = tk.Button(self,bg ="#20bebe")
         self.cat['text'] = 'Generate cats'
         self.cat['command'] = self.cat_gen
         self.cat.pack(fill = 'x',side = 'left')
 
-        self.dog = tk.Button(self)
+        self.dog = tk.Button(self,bg ="#20bebe")
         self.dog['text'] = 'Generate dogs'
         self.dog['command'] = self.dog_gen
         self.dog.pack(fill = 'x',side = 'left')
 
-        self.dog_pics = tk.Button(self, text = 'sample dog', command = lambda: self.create_window(self.dog_list[-1]))
+        self.dog_pics = tk.Button(self, text = 'sample dog', command = lambda: self.create_window(self.dog_list[-1]),bg ="#20bebe")
 
         self.dog_pics.pack(fill = 'x',side = 'right')
 
-        self.cat_pics = tk.Button(self, text = 'sample cat', command = lambda: self.create_window(self.cat_list[-1]))
+        self.cat_pics = tk.Button(self, text = 'sample cat', command = lambda: self.create_window(self.cat_list[-1]),bg ="#20bebe")
 
         self.cat_pics.pack(fill = 'x',side = 'right')
 
-        self.allbut = tk.Button(self, text = 'random cat/dog', command = lambda: self.create_window(self.all[-1]))
+        self.allbut = tk.Button(self, text = 'random cat/dog', command = lambda: self.create_window(self.all[-1]),bg ="#20bebe")
 
         self.allbut.pack(fill = 'x',side = 'right')
 
-        self.timer = tk.Button(self, text = 'Set timer', command = self.timing)
+        self.timer = tk.Button(self, text = 'Set timer', command = self.timing,bg ="#20bebe")
 
         self.timer.pack(fill ='x', side = 'bottom')
 
-        self.quit = tk.Button(self, text="QUIT", fg="red",
+        self.quit = tk.Button(self, text="QUIT", fg="red",bg ="#20bebe",
                               command=self.master.destroy)
         self.quit.pack(side="bottom")
         
@@ -52,15 +60,15 @@ class Application(tk.Frame):
     def timing(self):
 
         self.t = tk.Toplevel(self)
-        self.butt1 =tk.Button(self.t, text = '5 minutes', command = lambda: self.set_time(300))
+        self.butt1 =tk.Button(self.t, text = '5 minutes', command = lambda: self.set_time(300),bg ="#20bebe")
         self.butt1.pack(fill = 'x',side = 'right')
-        self.butt2 =tk.Button(self.t, text = '10 minutes', command = lambda: self.set_time(600))
+        self.butt2 =tk.Button(self.t, text = '10 minutes', command = lambda: self.set_time(600),bg ="#20bebe")
         self.butt2.pack(fill = 'x',side = 'right')
-        self.butt3 =tk.Button(self.t, text = '15 minutes', command = lambda: self.set_time(900))
+        self.butt3 =tk.Button(self.t, text = '15 minutes', command = lambda: self.set_time(900),bg ="#20bebe")
         self.butt3.pack(fill = 'x',side = 'right')
-        self.butt4 =tk.Button(self.t, text = '20 minutes', command = lambda: self.set_time(1200))
+        self.butt4 =tk.Button(self.t, text = '20 minutes', command = lambda: self.set_time(1200),bg ="#20bebe")
         self.butt4.pack(fill = 'x',side = 'right')
-        self.butt5 =tk.Button(self.t, text = 'custom', command = lambda: self.set_time(int(input('What time do you want?'))))
+        self.butt5 =tk.Button(self.t, text = 'custom', command = lambda: self.set_time(int(input('What time do you want?'))),bg ="#20bebe")
         self.butt5.pack(fill = 'x',side = 'right')     
 
         

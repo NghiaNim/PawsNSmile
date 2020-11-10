@@ -102,12 +102,9 @@ class Application(tk.Frame):
         t.after(3000, lambda: t.destroy())
 
 
-        if len(self.dog_list) > 0 and len(self.cat_list) == 0:
-            self.dog_list.pop()
-        elif len(self.cat_list) > 0 and len(self.dog_list) == 0:
-            self.cat_list.pop()
-        else:
-            self.all.pop()
+        random.shuffle(self.cat_list)
+        random.shuffle(self.dog_list)
+        random.shuffle(self.all)
 
 
 

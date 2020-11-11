@@ -161,9 +161,11 @@ class Application(tk.Frame):
 root = tk.Tk()
 root.geometry('500x500')
 
-logo = Image.open("catNdog1.jpg")
+
+logo = Image.open("catNdog.jpg")
 # convert pillow image to tkinter image
-logo = logo.resize((round(logo.size[0]*0.15), round(logo.size[1]*0.111)))
+logo = logo.resize((round(logo.size[0]*0.8), round(logo.size[1]*0.8)))
+
 logo = ImageTk.PhotoImage(logo)
 logo_label = tk.Label(image=logo)
 logo_label.image = logo

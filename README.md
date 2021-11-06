@@ -1,7 +1,7 @@
 # PawsNSmile
-Is life happening too quick in a pandemic? Does everyday feel the same and time slowly reveals itself to be a social construct made to run a functional society? Is Zoom too tiring and thoughts of how an online video costs you $50k in tuition is making you rethink your life decisions?
+Is life happening too quickly in a pandemic? Does everyday feel the same and time slowly reveals itself to be a social construct made to run a functional society? Is Zoom too tiring and thoughts of how an online video costs you $50k in tuition are making you rethink your life decisions?
 
-I can't fix any of those problems but here's some cute cats and dogs.
+I can't help fix any of those problems but here's some cute cats and dogs.
 
 ## Installation
 
